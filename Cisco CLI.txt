@@ -1,0 +1,173 @@
+Lab 20201110
+
+usando tab si completa il commando
+
+no command 	//permette di annullare un comando precedente
+
+do command 	//permette di eseguire un comando permesso in
+		modalità differente dalla attuale
+
+WARNING: Se viene scritto in modo errato un comando (es.“enbla”), 
+il sistema cerca di interpretare la stringa come un nome
+simbolico da risolvere e mostra il messaggio “Translating "enbla"...domain server (255.255.255.255)”, 
+quindi si blocca per 60 secondi cercando inutilmente di raggiungere un server DNS.
+
+Per sbloccare usare la combinazione di tasti Ctrl + Shift + 6
+
+
+Switch>?
+Exec commands:
+  ?	      per avere lista commandi
+  command ?    per avere aiuto per quel commando
+  connect     Open a terminal connection
+  disable     Turn off privileged commands
+  disconnect  Disconnect an existing network connection
+  enable      Turn on privileged commands
+  exit        Exit from the EXEC per uscire (da tutte le modalità/etc/tornare su di livello)
+  logout      Exit from the EXEC
+  ping        Send echo messages
+  resume      Resume an active network connection
+  show        Show running system information
+  telnet      Open a telnet connection
+  terminal    Set terminal line parameters
+  traceroute  Trace route to destination dice anche tutti dispositivi del cammino
+
+Switch>show ?
+  arp                Arp table
+  cdp                CDP information
+  clock              Display the system clock
+  crypto             Encryption module
+  dtp                DTP information
+  etherchannel       EtherChannel information
+  flash:             display information about flash: file system
+  history            Display the session command history
+  interfaces         Interface status and configuration
+  ip                 IP information
+  lldp               LLDP information
+  mac                MAC configuration
+  mac-address-table  MAC forwarding table
+  mls                Show MultiLayer Switching information
+  privilege          Show current privilege level
+  sessions           Information about Telnet connections
+  ssh                Status of SSH server connections
+  tcp                Status of TCP connections
+  terminal           Display terminal configuration parameters
+  users              Display information about terminal lines
+  version            System hardware and software status
+  vlan               VTP VLAN status
+
+
+
+show mac-address-table		//tab. indirizzi mac
+show interface FastEthernet 0/1
+show terminal	//mostra caratteristiche terminale
+show vlan	//mostra tab. database vlan
+show version 	//mostra caratteristiche switch
+
+
+Siamo in modalità admin
+
+Switch#?
+Exec commands:
+  clear       Reset functions
+  clock       Manage the system clock
+  configure   Enter configuration mode
+  connect     Open a terminal connection
+  copy        Copy from one file to another
+  debug       Debugging functions (see also 'undebug')
+  delete      Delete a file
+  dir         List files on a filesystem
+  disable     Turn off privileged commands
+  disconnect  Disconnect an existing network connection
+  enable      Turn on privileged commands
+  erase       Erase a filesystem
+  exit        Exit from the EXEC
+  logout      Exit from the EXEC
+  more        Display the contents of a file
+  no          Disable debugging informations
+  ping        Send echo messages
+  reload      Halt and perform a cold restart
+  resume      Resume an active network connection
+  setup       Run the SETUP command facility
+  show        Show running system information
+  ssh         Open a secure shell client connection
+  telnet      Open a telnet connection
+  terminal    Set terminal line parameters
+  traceroute  Trace route to destination
+  undebug     Disable debugging functions (see also 'debug')
+  vlan        Configure VLAN parameters
+  write       Write running configuration to memory, network, or terminal
+	      ***(salva nel filesystem le modifiche)
+
+Switch(config)#?
+Configure commands:
+  access-list        Add an access list entry
+  banner             Define a login banner
+  boot               Boot Commands
+  cdp                Global CDP configuration subcommands
+  clock              Configure time-of-day clock
+  crypto             Encryption module
+  default            Set a command to its defaults
+  do                 To run exec commands in config mode
+  enable             Modify enable password parameters
+  end                Exit from configure mode
+  exit               Exit from configure mode
+  hostname           Set system's network name
+  interface          Select an interface to configure
+  ip                 Global IP configuration subcommands
+  line               Configure a terminal line
+  lldp               Global LLDP configuration subcommands
+  logging            Modify message logging facilities
+  mac                MAC configuration
+  mac-address-table  Configure the MAC address table
+  monitor            SPAN information and configuration
+  no                 Negate a command or set its defaults
+  ntp                Configure NTP
+  port-channel       EtherChannel configuration
+  privilege          Command privilege parameters
+  service            Modify use of network based services
+  snmp-server        Modify SNMP engine parameters
+  spanning-tree      Spanning Tree Subsystem
+  username           Establish User Name Authentication
+  vlan               Vlan commands
+  vtp                Configure global VTP state
+
+
+Switch(config)#vlan 20 //fa entrare in sub-mode config-vlan
+do show vlan //da (config) qui per mostrare/controllare vlan database 
+
+siamo in configure-terminal>interface>fastthernet
+
+Switch(config-if)#?
+  cdp               Global CDP configuration subcommands
+  channel-group     Etherchannel/port bundling configuration
+  channel-protocol  Select the channel protocol (LACP, PAgP)
+  description       Interface specific description
+  duplex            Configure duplex operation.
+  exit              Exit from interface configuration mode
+  ip                Interface Internet Protocol config commands
+  lldp              LLDP interface subcommands
+  mls               mls interface commands
+  no                Negate a command or set its defaults
+  shutdown          Shutdown the selected interface
+  spanning-tree     Spanning Tree Subsystem
+  speed             Configure speed operation.
+  storm-control     storm configuration
+  switchport        Set switching mode characteristics
+  tx-ring-limit     Configure PA level transmit ring limi
+
+shutdown //per spegnare quel interfaccia
+no shutdown //per riaccendere quel interfaccia
+
+Switch(config-if)#switchport ?
+  access         Set access mode characteristics of the interface
+  mode           Set trunking mode of the interface
+  nonegotiate    Device will not engage in negotiation protocol on this
+                 interface
+  port-security  Security related command
+  priority       Set appliance 802.1p priority
+  protected      Configure an interface to be a protected port
+  trunk          Set trunking characteristics of the interface
+  voice          Voice appliance attributes
+
+
