@@ -1,2 +1,2 @@
 # lab-reti
-Laboratorio di Reti di Calcolatori @unimi_inf
+Laboratorio di Reti di Calcolatori  @ Unimi informatica
